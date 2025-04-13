@@ -39,15 +39,23 @@
     </nav>
   </div>
   <div class="container-fluid">
-    <div class="my-auto">
-      <h3 class="mb-0 header-font">STAT 1150 - Introduction to Basic Statistics and Computing
-      </h3>
-      <p>Summer 2022</p>
-      <div>
-        <a href="./Resources/course_outlines/STAT1150_Course Outline.pdf" target="_blank">
-          <button type="button" class="btn btn-outline-primary btn-sm">course outline</button> </a>
+    <div class="row" style="margin-bottom: 100px;">
+      <div class="col-md-4">
+        <div class="my-auto">
+          <h3 class="mb-0 header-font">STAT 1150 - Introduction to Basic Statistics and Computing
+          </h3>
+          <p>Summer 2022</p>
+          <div>
+            <a href="#">
+              <button type="button" class="btn btn-primary btn-sm" id="pdfToggleBtn">Course</button>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>   
+      <div class="col-md-8" id="pdfContainer">
+        <iframe id="pdfViewer" src="./Resources/course_outlines/STAT1150_Course Outline.pdf#toolbar=0&zoom=100" style="width: 100%; height: 600px; border: none;"></iframe>
+      </div>
+    </div>
   </div> 
 
     <!-- Bootstrap core JavaScript -->
@@ -59,13 +67,15 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+    
+      <footer class="fixed-bottom bg-white border-top border-dark text-primary text-center text-white">
+        <div class="text-center p-3">
+          © 2025 by Surani Matharaarachchi.
+        </div>
+      </footer>
 
   </body>
 
-  <footer class="text-primary text-center text-white" style="position: fixed; bottom: 0; width: 100%;">
-    <div class="text-center p-3">
-      © 2024 by Surani Matharaarachchi.
-    </div>
-  </footer>
+
 
 </html>

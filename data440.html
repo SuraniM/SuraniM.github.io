@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Surani Matharaarachchi">
+    <meta name="keywords" content="datascience,statistics,phd,surani,matharaarachchi,personal website,webdesign,portfolio,website" />
+    <meta name="description" content="Surani Matharaarachchi Personal Website" />
+    <meta property="og:title" content="Surani Matharaarachchi Personal Website" />
+
+    <title>Surani Matharaarachchi Personal Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+  <div>  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <a class="navbar-brand" href="./index.html">
+        <span class="d-none d-lg-block">Home</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="row" style="margin-bottom: 100px;">
+      <div class="col-md-4">
+        <div class="my-auto">
+          <h3 class="mb-0 header-font">DATA 440 - Statistical Machine Learning
+          </h3>
+          <p>April 2025</p>
+          <div class="d-flex flex-column">
+            <a href="#" onclick="togglePdf('unit5')" class="mb-2">
+              <button type="button" class="btn btn-outline-primary btn-sm pdf-btn" id="btn-unit5">Unit 5: Regularization</button>
+            </a>
+            <a href="#" onclick="togglePdf('coding5')" class="mb-2">
+              <button type="button" class="btn btn-outline-primary btn-sm pdf-btn" id="btn-coding5">Coding Example 5</button>
+            </a>
+            <a href="#" onclick="togglePdf('homework5')">
+              <button type="button" class="btn btn-outline-primary btn-sm pdf-btn" id="btn-homework5">Homework Assignment 5</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8" id="pdfContainer">
+        <iframe id="pdfViewer" src="./Resources/pdfs/Regularization.pdf#toolbar=0&zoom=60" style="width: 100%; height: 600px; border: none;"></iframe>
+      </div>
+    </div>
+  </div> 
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+    <script>
+      const pdfFiles = {
+        'unit5': './Resources/pdfs/Regularization.pdf',
+        'coding5': './Resources/course_outlines/DATA440_Coding5.pdf',
+        'homework5': './Resources/course_outlines/DATA440_Homework5.pdf'
+      };
+
+      let currentPdf = 'unit5'; // Set default PDF
+
+      // Set initial button state
+      document.addEventListener('DOMContentLoaded', function() {
+        const unit5Btn = document.getElementById('btn-unit5');
+        unit5Btn.classList.remove('btn-outline-primary');
+        unit5Btn.classList.add('btn-primary');
+      });
+
+      function togglePdf(pdfId) {
+        const pdfContainer = document.getElementById('pdfContainer');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const allButtons = document.querySelectorAll('.pdf-btn');
+        
+        // Reset all buttons to outline style
+        allButtons.forEach(btn => {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-outline-primary');
+        });
+
+        if (currentPdf === pdfId) {
+          // If clicking the same button, hide the PDF
+          pdfContainer.style.display = 'none';
+          currentPdf = null;
+        } else {
+          // Show new PDF and update button style
+          currentPdf = pdfId;
+          pdfViewer.src = pdfFiles[pdfId] + '#toolbar=0&zoom=100';
+          pdfContainer.style.display = 'block';
+          const activeBtn = document.getElementById(`btn-${pdfId}`);
+          activeBtn.classList.remove('btn-outline-primary');
+          activeBtn.classList.add('btn-primary');
+        }
+      }
+    </script>
+    
+      <footer class="fixed-bottom bg-white border-top border-dark text-primary text-center text-white">
+        <div class="text-center p-3">
+          © 2025 by Surani Matharaarachchi.
+        </div>
+      </footer>
+
+  </body>
+
+
+
+</html>
