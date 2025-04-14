@@ -41,7 +41,7 @@
   <div class="container-fluid">
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-md-4">
-        <div class="my-auto">
+        <div class="my-auto p-2">
           <h3 class="mb-0 header-font">DATA 440 - Statistical Machine Learning
           </h3>
           <p>April 2025</p>
@@ -76,8 +76,8 @@
     <script>
       const pdfFiles = {
         'unit5': './Resources/pdfs/Regularization.pdf',
-        'coding5': './Resources/course_outlines/DATA440_Coding5.pdf',
-        'homework5': './Resources/course_outlines/DATA440_Homework5.pdf'
+        'coding5': './Resources/pdfs/Predict_WaterQuality.html',
+        'homework5': './Resources/pdfs/Homework_Assignment_Mock_UCalgary.pdf'
       };
 
       let currentPdf = 'unit5'; // Set default PDF
@@ -107,7 +107,7 @@
         } else {
           // Show new PDF and update button style
           currentPdf = pdfId;
-          pdfViewer.src = pdfFiles[pdfId] + '#toolbar=0&zoom=100';
+          pdfViewer.src = pdfFiles[pdfId] + '#toolbar=0&zoom=60';
           pdfContainer.style.display = 'block';
           const activeBtn = document.getElementById(`btn-${pdfId}`);
           activeBtn.classList.remove('btn-outline-primary');
